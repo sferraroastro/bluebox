@@ -12,4 +12,4 @@
  EUCLID                      | 2024.0   | 6.5       | Space     | Spectro+Imaging  | Approved  | 1.0      |            |
  VERA RUBIN OBS (LSST)       | 2026.0   | 10.0      | Ground    | Imaging          | Approved  | 1.0      |            |
  NANCY GRACE ROMAN           | 2027.0   | 5.0       | Space     | Spectro+Imaging  | Approved  |          |            |
- SPHEREx		     | 2025.0   | 3.0       | Space     | Spectro+Imaging  | Approved  |          | 3.0        |
+ SPHEREx		     | 2026.0   | 3.0       | Space     | Spectro+Imaging  | Approved  |          | 3.0        |
