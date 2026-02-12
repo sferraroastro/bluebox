@@ -2,12 +2,14 @@
  KiDS                        | 2011.0   | 8.5       | Ground    | Imaging          | Approved  |          |            |
  BOSS                        | 2009.0   | 5.0       | Ground    | Spectro          | Approved  |          |            | eBOSS
  eBOSS                       | 2014.0   | 5.25      | Ground    | Spectro          | Approved  |          |            |
- DES                         | 2013.0   | 6.1       | Ground    | Imaging          | Approved  |          |            |
+ DES                         | 2014.0   | 7.0       | Ground    | Imaging          | Approved  |          | 3.0        |
  HETDEX                      | 2018.0   | 5.7       | Ground    | Spectro          | Approved  |          |            |
  HSC                         | 2014.0   | 7.7       | Ground    | Imaging          | Approved  |          |            | PFS
  PFS                         | 2023.0   | 6.0       | Ground    | Spectro          | Approved  |          |            |
- DESI                        | 2021.0   | 5.0       | Ground    | Spectro          | Approved  |          |            |
- MSE/MegaMapper/SpecTel      | 2029.0   | 5.0       | Ground    | Spectro          | Proposed  |          |            |
- EUCLID                      | 2022.0   | 6.0       | Space     | Spectro+Imaging  | Approved  |          |            |
- VERA RUBIN OBS (LSST)       | 2022.75  | 10.0      | Ground    | Imaging          | Approved  |          |            |
- NANCY GRACE ROMAN (WFIRST)  | 2026.0   | 5.0       | Space     | Spectro+Imaging  | Approved  |          |            |
+ DESI                        | 2021.0   | 8.0       | Ground    | Spectro          | Approved  |          |            | DESI-II
+ DESI-II                     | 2029.0   | 6.0       | Ground    | Spectro          | Proposed  |          |            |
+ Spec-S5                     | 2030.0   | 5.0       | Ground    | Spectro          | Proposed  |          |            |
+ EUCLID                      | 2024.0   | 6.5       | Space     | Spectro+Imaging  | Approved  | 1.0      |            |
+ VERA RUBIN OBS (LSST)       | 2026.0   | 10.0      | Ground    | Imaging          | Approved  | 1.0      |            |
+ NANCY GRACE ROMAN           | 2027.0   | 5.0       | Space     | Spectro+Imaging  | Approved  |          |            |
+ SPHEREx		     | 2025.0   | 3.0       | Space     | Spectro+Imaging  | Approved  |          | 3.0        |
