@@ -2,6 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.colors
 import pandas as pd
+import os
+import sys
 
 
 class Style:
@@ -52,7 +54,7 @@ def timeline(*items, start=2018.8, stop=2032.5, now=2020 + 8/12,
              width=14, item_height=0.25, item_space=0.05, year_pad=0.2, dpi=72,
              fillcolor='steelblue', edgecolor='k', edgestyle='-', alpha=1,
              textcolor='black', textsize=12, textweight='bold',
-             save=None):
+             save=None, show=True):
     """Plot a timeline chart.
 
     Parameters
@@ -88,6 +90,8 @@ def timeline(*items, start=2018.8, stop=2032.5, now=2020 + 8/12,
         Matplotlib text weight used for the label within each timeline box.
     save : str or None.
         Save to the specified file name when not None.
+    show : bool.
+        Show the plot window when True.
     """
     items = pd.concat(items)
 
@@ -147,6 +151,10 @@ def timeline(*items, start=2018.8, stop=2032.5, now=2020 + 8/12,
                 plotGradient(
                     ax, (item.start - item.ramp_up, ylo), item.ramp_up, height,
                     color=fc, alpha=lambda x,y: a * x)
+            if item.ramp_down:
+                plotGradient(
+                    ax, (item.start + item.duration, ylo), item.ramp_down, height,
+                    color=fc, alpha=lambda x,y: a * (1 - x))
 
         # Fill this box, possibly with stacked colors.
         fc = fillcolor(item)
@@ -162,7 +170,7 @@ def timeline(*items, start=2018.8, stop=2032.5, now=2020 + 8/12,
 
         # Draw box edge, if requested.
         ec = edgecolor(item)
-        if ec.lower() is not 'none':
+        if ec.lower() != 'none':
             box = plt.Rectangle((item.start, i - h), item.duration, 2 * h, fc='none', ec=ec, ls=edgestyle(item), alpha=a)
             ax.add_artist(box)
 
@@ -187,3 +195,25 @@ def timeline(*items, start=2018.8, stop=2032.5, now=2020 + 8/12,
 
     if save:
         plt.savefig(save, facecolor=fig.get_facecolor())
+    if show:
+        plt.show()
+
+
+if __name__ == "__main__":
+    # Allow running this file directly from the repo root.
+    repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    if repo_root not in sys.path:
+        sys.path.insert(0, repo_root)
+
+    from bluebox.io import load
+
+    cmb = load("CMB.txt")
+    lss = load("LSS.txt")
+
+    timeline(
+        cmb, lss,
+        fillcolor=Style('method', Spectro='yellowgreen', Imaging='yellowgreen', Microwave='cyan'),
+        edgestyle=Style('status', Approved='-', Proposed='--'),
+        alpha=Style('status', Approved=1, Proposed=0.5),
+        show=True,
+    )
